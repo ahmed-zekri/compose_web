@@ -30,6 +30,13 @@ kotlin {
 rootProject.extensions.configure<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension> {
     versions.webpackCli.version = "4.10.0"
 }
-tasks.create("stage") {
-    dependsOn("installDist")
+tasks.register("runServer") {
+    doLast {
+        exec {
+            workingDir("$buildDir")
+            executable("gradlew")
+            args("jsBrowserRun --continuous")
+        }
+        println("Executed!")
+    }
 }
