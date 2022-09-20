@@ -36,9 +36,105 @@ tasks.register("stage") {
     doLast {
         exec {
 
-            executable("jsBrowserRun")
+            executable("kotlinNpmCachesSetup")
 
         }
+        exec {
+
+            executable("jsPackageJson")
+
+        }
+        exec {
+
+            executable("kotlinNodeJsSetup")
+
+        }
+        exec {
+
+            executable("kotlinRestoreYarnLock")
+
+        }
+
+        exec {
+
+            executable("jsTestPackageJson")
+
+        }
+        exec {
+
+            executable("packageJsonUmbrella")
+
+        }
+        exec {
+
+            executable("rootPackageJson")
+
+        }
+        exec {
+
+            executable("kotlinNpmInstall")
+
+        }
+
+        exec {
+
+            executable("jsGenerateExternalsIntegrated")
+
+        }
+        exec {
+
+            executable("kotlinStoreYarnLock")
+
+        }
+
+
+
+        exec {
+
+            executable("compileKotlinJs")
+
+        }
+
+
+
+        exec {
+
+            executable("jsProcessResources")
+
+        }
+
+
+
+
+        exec {
+
+            executable("jsMainClasses")
+
+        }
+
+
+        exec {
+
+            executable("compileDevelopmentExecutableKotlinJs")
+
+        }
+
+
+        exec {
+
+            executable("jsDevelopmentExecutableCompileSync")
+
+        }
+
+
+        exec {
+
+            executable("jsBrowserDevelopmentRun")
+
+        }
+
+
+
         println("Executed!")
     }
 }
