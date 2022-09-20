@@ -32,106 +32,10 @@ rootProject.extensions.configure<org.jetbrains.kotlin.gradle.targets.js.nodejs.N
 }
 tasks.register("stage") {
 
-    dependsOn("build")
+    dependsOn("jsBrowserDevelopmentRun")
     doLast {
-        exec {
-
-            executable("kotlinNpmCachesSetup")
-
-        }
-        exec {
-
-            executable("jsPackageJson")
-
-        }
-        exec {
-
-            executable("kotlinNodeJsSetup")
-
-        }
-        exec {
-
-            executable("kotlinRestoreYarnLock")
-
-        }
-
-        exec {
-
-            executable("jsTestPackageJson")
-
-        }
-        exec {
-
-            executable("packageJsonUmbrella")
-
-        }
-        exec {
-
-            executable("rootPackageJson")
-
-        }
-        exec {
-
-            executable("kotlinNpmInstall")
-
-        }
-
-        exec {
-
-            executable("jsGenerateExternalsIntegrated")
-
-        }
-        exec {
-
-            executable("kotlinStoreYarnLock")
-
-        }
 
 
-
-        exec {
-
-            executable("compileKotlinJs")
-
-        }
-
-
-
-        exec {
-
-            executable("jsProcessResources")
-
-        }
-
-
-
-
-        exec {
-
-            executable("jsMainClasses")
-
-        }
-
-
-        exec {
-
-            executable("compileDevelopmentExecutableKotlinJs")
-
-        }
-
-
-        exec {
-
-            executable("jsDevelopmentExecutableCompileSync")
-
-        }
-
-
-        exec {
-
-            executable("jsBrowserDevelopmentRun")
-
-        }
 
 
 
