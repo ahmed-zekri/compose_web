@@ -1,19 +1,28 @@
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
-import org.jetbrains.compose.web.css.padding
-import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.dom.Button
+import androidx.compose.runtime.remember
+import kotlinx.coroutines.delay
 import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 import org.jetbrains.compose.web.renderComposable
 
-
 fun main() {
-    var count: Int by mutableStateOf(0)
-
     renderComposable(rootElementId = "root") {
-        Text("cksdcsdsdvsdsvddsv ")
+
+        val number = remember { mutableStateOf(0) }
+
+        LaunchedEffect(key1 = null) {
+
+            while (true) {
+                delay(1000)
+                number.value++
+            }
+
+        }
+
+        Div {
+            Text(number.value.toString())
+
+        }
     }
 }

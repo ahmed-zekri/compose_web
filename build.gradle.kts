@@ -36,8 +36,8 @@ tasks.register("stage") {
     doLast {
         exec {
 
-            executable("gradlew")
-            args("jsBrowserRun")
+            executable("jsBrowserRun")
+
         }
         println("Executed!")
     }
