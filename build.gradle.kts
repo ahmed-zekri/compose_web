@@ -35,7 +35,7 @@ tasks.register("stage") {
     dependsOn("build")
     doLast {
         exec {
-            workingDir("$buildDir")
+
             executable("gradlew")
             args("jsBrowserRun")
         }
